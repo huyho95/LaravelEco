@@ -87,7 +87,7 @@ if ($product->pro_total_rating) {
                                 {{ $age }}
                             </span>
                         </li>
-                        <li><span>Số lượng </span> <span>{{ $product->pro_number }}</span></li>
+                        <li><span>Số lượng </span> <span>{{ $product->pro_number}}</span></li>
                         <li><span>Số lần bán </span> <span>{{ $product->pro_pay }}</span></li>
                     </ul>
                 </td>

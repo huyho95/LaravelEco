@@ -21,13 +21,13 @@ class HomeController extends FrontendController
         $productHot = Product::Where([
             'pro_hot' => Product::HOT_ON,
             'pro_active' => Product::STATUS_PUBLIC
-        ])->limit(5)->get();
+        ])->limit(4)->get();
 
         $articleNews = Article::orderBy('id','DESC')->limit(6)->get();
 
         $categoriesHome = Category::with('products')
             ->where('c_home',Category::HOME)
-            ->limit(3)
+            ->limit(4)
             ->get();
 
         
@@ -50,7 +50,7 @@ class HomeController extends FrontendController
 
                 if ($listIdCategory)
                 {
-                    $productSuggest = Product::whereIn('pro_category_id',$listIdCategory)->limit(8)->get();
+                    $productSuggest = Product::whereIn('pro_category_id',$listIdCategory)->limit(4)->get();
                 }
            }
         }
@@ -73,7 +73,7 @@ class HomeController extends FrontendController
        if ($request->ajax())
        {
            $listID = $request->id;
-            $products = Product::whereIn('id',$listID)->get();
+            $products = Product::whereIn('id',$listID)->limit(4)->get();
             $html = view('components.product_view',compact('products'))->render();
             return response()->json(['data' => $html]);
        }

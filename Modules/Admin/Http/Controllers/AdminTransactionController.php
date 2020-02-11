@@ -48,7 +48,7 @@ class AdminTransactionController extends Controller
             //tang bien san pham
             foreach ($orders as $order) {
                 $product = Product::find($order->or_product_id);
-                $product->pro_number = $product->pro_number - $product->or_qty;
+                $product->pro_number = $product->pro_number - $order->or_qty;
                 $product->pro_pay++;
                 $product->save();
             }
