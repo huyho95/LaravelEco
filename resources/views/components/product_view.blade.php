@@ -52,7 +52,8 @@
                                     </div>
                                 </div>
                                 <div class="price-box">
-                                    <span class="new-price">{{ number_format($product->pro_price,0,',','.') }}</span>
+                                    <span class="new-price">{{ number_format($product->pro_price,0,',','.') }}
+                                        VND</span>
                                 </div>
                             </div>
                             <div class="product-content">

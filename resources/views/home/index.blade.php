@@ -72,7 +72,8 @@
                                         </div>
                                     </div>
                                     <div class="price-box">
-                                        <span class="new-price">{{ number_format($proHot->pro_price,0,',','.') }}</span>
+                                        <span class="new-price">{{ number_format($proHot->pro_price,0,',','.') }}
+                                            VND</span>
                                     </div>
                                 </div>
                                 <div class="product-content">
@@ -150,12 +151,12 @@
                     @foreach($categoryHome->products as $product)
 
                     <?php
-$ageDetail = 0;
+                $ageDetail = 0;
 
-if ($product->pro_total_rating) {
-    $ageDetail = round($product->pro_total_number / $product->pro_total_rating, 2);
-}
-?>
+                if ($product->pro_total_rating) {
+                    $ageDetail = round($product->pro_total_number / $product->pro_total_rating, 2);
+                }
+                ?>
 
                     <div class="block-content">
                         <!-- single block start -->
@@ -170,8 +171,9 @@ if ($product->pro_total_rating) {
                                         href="{{ route('get.detail.product',[$product->pro_slug,$product->id]) }}">{{ $product->pro_name }}</a>
                                 </h3>
                                 <p>{{ $product->pro_description }}</p>
-                                <div class="cat-price">{{ number_format($product->pro_price,0,',','.')}} đ <span
-                                        class="old-price">{{ number_format($product->pro_price,0,',','.')}}</span></div>
+                                <div class="cat-price">{{ number_format($product->pro_price,0,',','.')}} VND <span
+                                        class="old-price">{{ number_format($product->pro_price,0,',','.')}} VND</span>
+                                </div>
                                 <div class="cat-rating">
                                     @for($i = 1; $i <= 5; $i ++) <a href="#"><i
                                             class="fa fa-star {{ $i <= $ageDetail ? 'active' : ''}}"></i></a>
